@@ -1,0 +1,33 @@
+.font1 {
+    font-family: 'Yellowtail', cursive;
+}
+
+.font2 {
+    font-family: 'Damion', cursive;
+}
+
+.font3 {
+    font-family: 'Reenie Beanie', cursive;
+}
+
+.shadowed {
+    text-shadow: 1px 1px 2px rgb(10, 102, 87);
+}
+
+.shadowedo {
+    text-shadow: 1px 1px 2px rgb(172, 3, 149);
+}
+
+.shadowedish {
+    text-shadow: 1px 1px 2px rgba(3, 172, 169, 0.281);
+}
+
+.offleft {
+    text-align: left;
+    margin-left: 5rem;
+}
+
+.offleftish {
+    text-align: left;
+    margin-left: 3rem;
+}
