@@ -4,7 +4,7 @@ const routes = require("./routes");
 const cors = require('cors')
 const app = express();
 const http = require('http').createServer(app);
-const io = require('socket.io')(http);
+// const io = require('socket.io')(http);
 
 app.use(cors()); // middleware
 
@@ -24,25 +24,12 @@ app.use(routes);
 
 //console.log("process.env",process.env);
 
-// Connect to the Mongo DB
+// Connection to mongoDB
 if (environment === "production") {
   mongoose.connect(process.env.MONGODB_URI);
 } else {
   mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/aviatobookz", { useNewUrlParser: true });
 }
-
-Sockets
-io.on('connection', socket => {
-  socket.on('fromReact', title => {
-    console.log("fromReact",title);
-    socket.broadcast.emit('fromServer', { data : title.data });
-  });
-  socket.on('Delete', id => {
-    console.log("Delete",id);
-    socket.broadcast.emit('Delete', { data : id.data });
-  });
-});
-
 
 // Start the API server
 http.listen(PORT, function() {
